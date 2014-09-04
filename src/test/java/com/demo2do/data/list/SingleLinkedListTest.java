@@ -33,8 +33,11 @@ public class SingleLinkedListTest {
         inputs.clear();
     }
 
+    /**
+     * Create single linked list from head
+     */
     @Test
-    public void testPush() {
+    public void testCreateFromHead() {
         SingleLinkedList<Integer> iList = new SingleLinkedList<Integer>();
 
         for(Integer i : inputs) {
@@ -42,6 +45,20 @@ public class SingleLinkedListTest {
         }
 
         Assert.assertEquals("List[ 5, 4, 3, 2, 1 ]", iList.toString());
+    }
+
+    /**
+     * Create single linked list from tail
+     */
+    @Test
+    public void testCreateFromTail() {
+        SingleLinkedList<Integer> list = new SingleLinkedList<Integer>();
+
+        for(Integer i : inputs) {
+            list.append(i);
+        }
+
+        Assert.assertEquals("List[ 1, 2, 3, 4, 5 ]", list.toString());
     }
 
 }
